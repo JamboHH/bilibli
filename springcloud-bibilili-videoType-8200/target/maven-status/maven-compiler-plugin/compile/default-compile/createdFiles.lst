@@ -1,0 +1,8 @@
+com\six\SpringCloudVideoTypeApplication.class
+com\six\dao\VideoTypeMapper.class
+com\six\service\VideoLabelService.class
+com\six\service\VideoTypeService.class
+com\six\controller\VideoTypeController.class
+com\six\service\impl\VideoLabelServiceImpl.class
+com\six\dao\VideoLabelMapper.class
+com\six\service\impl\VideoTypeServiceImpl.class

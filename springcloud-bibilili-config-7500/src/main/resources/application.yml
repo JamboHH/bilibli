@@ -1,0 +1,21 @@
+server:
+  port: 7500
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Dongbala-hammer/bibilili-config.git # 配置git仓库的地址
+          search-paths: bibilili-config
+          default-label: main
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://47.105.162.57:8000/eureka/
+  instance:
+    prefer-ip-address: true
+    hostName: ${spring.cloud.client.ip-address}
+    instance-id: http://${spring.cloud.client.ip-address}:${server.port}

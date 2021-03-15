@@ -1,0 +1,42 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: bilibili-search
+
+
+  cloud:
+    config:
+      #本地配置
+#      uri: http://localhost:7500
+#      name: st-config
+#      profile: dev
+
+      #git远程配置
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: bibilili-config
+#      label: main
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.105.162.57:8000/eureka/
+  instance:
+    prefer-ip-address: true
+#    hostName: 10.12.154.26
+    instance-id: http://${spring.cloud.client.ip-address}:${server.port}
+#    instance-id: http://10.12.154.26:${server.port}
+#    ip-address: 10.12.154.26:8081
+
+#连接es索引库的地址
+springcloud-es:
+  elasticsearch:
+    hostlist: ${eshostlist:127.0.0.1:9200} #多个结点中间用逗号分隔
+
+es:
+  index: live-message

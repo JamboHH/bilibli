@@ -1,0 +1,5 @@
+com\six\service\VideoService.class
+com\six\controller\VideoController.class
+com\six\SpringCloudVideoApplication.class
+com\six\dao\VideoMapper.class
+com\six\service\impl\VideoServiceImpl.class

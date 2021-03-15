@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.six.dao.VideoLabelMapper">
+    <resultMap id="BaseResult" type="com.six.pojo.Slabel">
+        <id property="id" column="sl_id"></id>
+        <result property="slName" column="sl_name"></result>
+        <result property="tId" column="t_id"></result>
+    </resultMap>
+    <select id="findVideoLabelByTag" resultMap="BaseResult">
+        select * from secondary_label where t_id=#{tId}
+    </select>
+</mapper>

@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: bibilili-video
+  cloud:
+    config:
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: bibilili-config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.105.162.57:8000/eureka/
+  instance:
+    prefer-ip-address: true
+    hostName: ${spring.cloud.client.ip-address}
+    instance-id: http://${spring.cloud.client.ip-address}:${server.port}
+#    instance-id: http://${spring.cloud.client.ip-address}:${server.port}
+#    ip-address: 10.12.154.49:8100
+server:
+  port: 8100

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.six.dao.CommentMapper">
+    <resultMap id="BaseResult" type="com.six.pojo.Comment">
+        <id property="cid" column="c_id"></id>
+        <result column="video_id" property="vid"></result>
+        <result column="user_id" property="uid"></result>
+        <result column="content" property="content"></result>
+        <result column="likes" property="likes"></result>
+        <result column="comment_time" property="commentTime"></result>
+    </resultMap>
+    <select id="findByVid" resultMap="BaseResult">
+        select * from comment where video_id=#{vid}
+        <if test="order!=null and order!=''">
+            order by  #{order} desc
+        </if>
+    </select>
+    <insert id="addComment" parameterType="com.six.pojo.Comment">
+        insert into comment (video_id,user_id,content,comment_time) values (#{vid},#{uid},#{content},#{commentTime})
+    </insert>
+    <select id="findAll" resultMap="BaseResult">
+        select * from comment
+    </select>
+    <delete id="deleteComment">
+        delete from comment where c_id=#{cid}
+    </delete>
+
+    <update id="updateLikes">
+        update comment set likes=#{likes} where c_id=#{cid}
+    </update>
+</mapper>

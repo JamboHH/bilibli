@@ -1,0 +1,5 @@
+com\six\service\ElSearchService.class
+com\six\service\impl\ElSearchServiceImpl.class
+com\six\SpringCloudElasticsearchApplication.class
+com\six\config\ElasticsearchConfig.class
+com\six\controller\SearchController.class

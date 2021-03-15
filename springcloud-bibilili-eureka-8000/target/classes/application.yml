@@ -1,0 +1,16 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.105.162.57:8000/eureka/
+      #defaultZone: http://localhost:8000/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false
+  instance:
+    prefer-ip-address: true
